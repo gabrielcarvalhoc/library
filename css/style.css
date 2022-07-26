@@ -4,4 +4,11 @@
   box-sizing: border-box;
 }
 
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
 /*# sourceMappingURL=style.css.map */

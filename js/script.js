@@ -1,6 +1,7 @@
 let tbody = document.querySelector('#books-table');
 let buttonNewBook = document.querySelector('#button-new-book');
 let formNewBook = document.querySelector('#form-new-book');
+let deleteButtons = document.querySelectorAll('.delete-button');
 
 let myLibrary = [];
 
@@ -31,7 +32,7 @@ function addBooktoLibrary() {
 function displayBooks() {
     tbody.textContent = '';
 
-    myLibrary.forEach((book) => {
+    myLibrary.forEach((book, index) => {
         let tr = document.createElement('tr');
         tbody.append(tr);
         
@@ -40,7 +41,19 @@ function displayBooks() {
             tr.append(td);
             td.append(book[prop]);
         }
+        
+        let td = document.createElement('td');
+        let deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete'
+        deleteButton.classList.add('button');
+        deleteButton.classList.add('delete-button');
+        deleteButton.setAttribute('data-index', index);
+        deleteButton.setAttribute('onclick', 'deleteBook(this)');
+        tr.append(td);
+        td.append(deleteButton);
     })
+
+    deleteButtons = document.querySelectorAll('.delete-button');
 }
 
 buttonNewBook.addEventListener('click', () => {
@@ -52,3 +65,15 @@ formNewBook.addEventListener('submit', (e) => {
     addBooktoLibrary();
     displayBooks();
 })
+
+function deleteBook(e) {
+    let dataIndex = e.getAttribute('data-index');
+
+    myLibrary.forEach((_book, index) => {
+        if (dataIndex == index) {
+            myLibrary.splice(index, 1);
+        }
+    })
+
+    displayBooks();
+}
