@@ -69,11 +69,7 @@ formNewBook.addEventListener('submit', (e) => {
 function deleteBook(e) {
     let dataIndex = e.getAttribute('data-index');
 
-    myLibrary.forEach((_book, index) => {
-        if (dataIndex == index) {
-            myLibrary.splice(index, 1);
-        }
-    })
+    myLibrary.splice(dataIndex, 1);
 
     displayBooks();
 }
