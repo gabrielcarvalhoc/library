@@ -1,25 +1,8 @@
 let tbody = document.querySelector('#books-table');
+let buttonNewBook = document.querySelector('#button-new-book');
+let formNewBook = document.querySelector('#form-new-book');
 
-let myLibrary = [
-    {
-        title: 'test',
-        author: 'test2',
-        pages: 'test3',
-        read: true
-    },
-    {
-        title: 'test4',
-        author: 'test5',
-        pages: 'test6',
-        read: true
-    },
-    {
-        title: 'test7',
-        author: 'test8',
-        pages: 'test9',
-        read: true
-    },
-];
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -28,19 +11,26 @@ function Book(title, author, pages, read) {
     this.read = read
 }
 
-// function addBooktoLibrary() {
-//     let title = prompt('Title');
-//     let author = prompt('Author');
-//     let pages = prompt('Pages');
-//     let read = prompt('Read');
+function addBooktoLibrary() {
+    let title = document.querySelector('#title').value;
+    let author = document.querySelector('#author').value;
+    let pages = document.querySelector('#pages').value;
+    let read = document.querySelector('#read').checked;
 
-//     const book = new Book(title, author, pages, read);
-    
-//     myLibrary.push(book);
-// }
+    if (read) {
+        read = 'yes';
+    } else {
+        read = 'no';
+    }
 
-function displayBook() {
+    const book = new Book(title, author, pages, read);
     
+    myLibrary.push(book);
+}
+
+function displayBooks() {
+    tbody.textContent = '';
+
     myLibrary.forEach((book) => {
         let tr = document.createElement('tr');
         tbody.append(tr);
@@ -53,6 +43,12 @@ function displayBook() {
     })
 }
 
-// addBooktoLibrary();
+buttonNewBook.addEventListener('click', () => {
+    formNewBook.style.display = 'flex';
+})
 
-displayBook();
+formNewBook.addEventListener('submit', (e) => {
+    e.preventDefault();
+    addBooktoLibrary();
+    displayBooks();
+})
