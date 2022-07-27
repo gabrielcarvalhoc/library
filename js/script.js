@@ -1,7 +1,6 @@
 let tbody = document.querySelector('#books-table');
 let buttonNewBook = document.querySelector('#button-new-book');
 let formNewBook = document.querySelector('#form-new-book');
-let deleteButtons = document.querySelectorAll('.delete-button');
 
 let myLibrary = [];
 
@@ -25,7 +24,7 @@ function addBooktoLibrary() {
     }
 
     const book = new Book(title, author, pages, read);
-    
+   
     myLibrary.push(book);
 }
 
@@ -37,20 +36,34 @@ function displayBooks() {
         tbody.append(tr);
         
         for (let prop in book) {
-            let td = document.createElement('td');
-            tr.append(td);
-            td.append(book[prop]);
+            if (book.hasOwnProperty(prop)) {
+                let td = document.createElement('td');
+                tr.append(td);
+                td.append(book[prop]);
+            }
         }
         
-        let td = document.createElement('td');
+        let td1 = document.createElement('td');
+        let td2 = document.createElement('td');
+        let readButton = document.createElement('button');
         let deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete'
+
+        readButton.textContent = 'Change';
+        readButton.classList.add('button');
+        readButton.classList.add('read-button');
+        readButton.setAttribute('data-index', index);
+        readButton.setAttribute('onclick', 'toggleRead(this)');
+
+        deleteButton.textContent = 'Delete';
         deleteButton.classList.add('button');
         deleteButton.classList.add('delete-button');
         deleteButton.setAttribute('data-index', index);
         deleteButton.setAttribute('onclick', 'deleteBook(this)');
-        tr.append(td);
-        td.append(deleteButton);
+
+        tr.append(td1);
+        td1.append(readButton);
+        tr.append(td2);
+        td2.append(deleteButton);
     })
 
     deleteButtons = document.querySelectorAll('.delete-button');
@@ -65,6 +78,18 @@ formNewBook.addEventListener('submit', (e) => {
     addBooktoLibrary();
     displayBooks();
 })
+
+function toggleRead(e) {
+    let dataIndex = e.getAttribute('data-index');
+    
+    if (myLibrary[dataIndex].read == 'no') {
+        myLibrary[dataIndex].read = 'yes';
+    } else {
+        myLibrary[dataIndex].read = 'no';
+    }
+
+    displayBooks();
+}
 
 function deleteBook(e) {
     let dataIndex = e.getAttribute('data-index');
