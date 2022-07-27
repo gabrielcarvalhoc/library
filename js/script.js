@@ -1,5 +1,5 @@
 let tbody = document.querySelector('#books-table');
-let buttonNewBook = document.querySelector('#button-new-book');
+let buttonNewBook = document.querySelector('#new-book-button');
 let formNewBook = document.querySelector('#form-new-book');
 
 let myLibrary = [];
@@ -53,13 +53,11 @@ function displayBooks() {
         let deleteButton = document.createElement('button');
 
         readButton.textContent = 'Change';
-        readButton.classList.add('button');
         readButton.classList.add('read-button');
         readButton.setAttribute('data-index', index);
         readButton.setAttribute('onclick', 'toggleRead(this)');
 
         deleteButton.textContent = 'Delete';
-        deleteButton.classList.add('button');
         deleteButton.classList.add('delete-button');
         deleteButton.setAttribute('data-index', index);
         deleteButton.setAttribute('onclick', 'deleteBook(this)');

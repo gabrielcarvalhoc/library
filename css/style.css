@@ -1,7 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background: #F4F1DE;
+  color: #505370;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 15px;
+  background-color: #cec9aa;
+  width: 100vw;
+  padding: 2vh 0;
+}
+
+button {
+  color: #505370;
+  width: fit-content;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 5vw;
+  gap: 5vh;
+  width: 100%;
+}
+.container #new-book-button {
+  font-size: 20px;
+  padding: 10px 25px;
+  background-color: #97d3b6;
+}
+.container #new-book-button:hover {
+  transform: scale(1.05);
+  background-color: #5be4a2;
+}
+.container #form-new-book {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4vw;
+  width: 100%;
+}
+.container #form-new-book .form-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+}
+.container #form-new-book .form-inputs .label-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.container #form-new-book .form-inputs .label-input input {
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  height: 30px;
+  padding: 0 10px;
+}
+.container #form-new-book .form-inputs .label-input input[type=text]:hover,
+.container #form-new-book .form-inputs .label-input input[type=number]:hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.2784313725);
+}
+.container #form-new-book .form-inputs .label-input input::-webkit-outer-spin-button,
+.container #form-new-book .form-inputs .label-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.container #form-new-book .form-inputs .label-input input[type=number] {
+  -moz-appearance: textfield;
+}
+.container #form-new-book #add-button {
+  background-color: #dadbe2;
+  font-size: 20px;
+  padding: 10px 25px;
+}
+.container #form-new-book #add-button:hover {
+  background-color: #505370;
+  color: #fff;
 }
 
 table,
@@ -12,11 +102,11 @@ td {
 }
 
 .read-book {
-  background-color: #39df39;
+  background-color: #97d3b6;
 }
 
 .no-read-book {
-  background-color: #f33b3b;
+  background-color: #ffb1b1;
 }
 
 /*# sourceMappingURL=style.css.map */
