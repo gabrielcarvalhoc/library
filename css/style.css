@@ -40,7 +40,7 @@ button {
   width: 100%;
 }
 .container #new-book-button {
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px 25px;
   background-color: #97d3b6;
 }
@@ -86,26 +86,35 @@ button {
 }
 .container #form-new-book #add-button {
   background-color: #dadbe2;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px 25px;
 }
 .container #form-new-book #add-button:hover {
   background-color: #505370;
   color: #fff;
 }
-
-table,
-th,
-td {
-  border: 1px solid;
-  border-collapse: collapse;
+.container table,
+.container th,
+.container td {
+  border-collapse: separate;
 }
-
-.read-book {
+.container #table {
+  text-align: center;
+  width: 100%;
+}
+.container #table th {
+  background-color: #b6ae78;
+  color: #fff;
+}
+.container #table th,
+.container #table td {
+  width: 16.6666666667%;
+  max-width: fit-content;
+}
+.container .read-book {
   background-color: #97d3b6;
 }
-
-.no-read-book {
+.container .no-read-book {
   background-color: #ffb1b1;
 }
 

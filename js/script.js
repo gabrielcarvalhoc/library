@@ -1,6 +1,7 @@
 let tbody = document.querySelector('#books-table');
 let buttonNewBook = document.querySelector('#new-book-button');
 let formNewBook = document.querySelector('#form-new-book');
+let table = document.querySelector('#table');
 
 let myLibrary = [];
 
@@ -18,9 +19,9 @@ function addBooktoLibrary() {
     let read = document.querySelector('#read').checked;
 
     if (read) {
-        read = 'yes';
+        read = 'Yes';
     } else {
-        read = 'no';
+        read = 'No';
     }
 
     const book = new Book(title, author, pages, read);
@@ -41,9 +42,9 @@ function displayBooks() {
             td.append(book[prop]);
         }
 
-        if (book.read == 'yes') {
+        if (book.read == 'Yes') {
             tr.classList.add('read-book');
-        } else if (book.read == 'no') {
+        } else if (book.read == 'No') {
             tr.classList.add('no-read-book');
         }
         
@@ -73,6 +74,7 @@ function displayBooks() {
 
 buttonNewBook.addEventListener('click', () => {
     formNewBook.style.display = 'flex';
+    table.style.display = 'table';
 })
 
 formNewBook.addEventListener('submit', (e) => {
@@ -84,10 +86,10 @@ formNewBook.addEventListener('submit', (e) => {
 function toggleRead(e) {
     let dataIndex = e.getAttribute('data-index');
     
-    if (myLibrary[dataIndex].read == 'no') {
-        myLibrary[dataIndex].read = 'yes';
+    if (myLibrary[dataIndex].read == 'No') {
+        myLibrary[dataIndex].read = 'Yes';
     } else {
-        myLibrary[dataIndex].read = 'no';
+        myLibrary[dataIndex].read = 'No';
     }
 
     displayBooks();

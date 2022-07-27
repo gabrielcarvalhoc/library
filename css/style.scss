@@ -1,12 +1,14 @@
+@use "sass:math";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 $color-yellow-light: #F4F1DE;
-$color-red: #ffb1b1;
-$color-purple-dark: #505370;
 $color-purple-light: #dadbe2;
-$color-green-dark: #97d3b6;
+$color-purple-dark: #505370;
 $color-green-light: #5be4a2;
+$color-green-dark: #97d3b6;
 $color-brown: #cec9aa;
+$color-brown-dark: #b6ae78;
+$color-red: #ffb1b1;
 
 $font-stack: 'Open Sans', sans-serif;
 
@@ -51,7 +53,7 @@ button {
     width: 100%;
 
     #new-book-button {
-        font-size: 20px;
+        font-size: 18px;
         padding: 10px 25px;
         background-color: $color-green-dark;
     
@@ -105,7 +107,7 @@ button {
 
         #add-button {
             background-color: $color-purple-light;
-            font-size: 20px;
+            font-size: 18px;
             padding: 10px 25px;
         
             &:hover {
@@ -114,19 +116,35 @@ button {
             }
         }
     }
+
+    table,
+    th,
+    td {
+        border-collapse: separate;
+    }
+    
+    #table {
+        text-align: center;
+        width: 100%;
+        
+        th {
+            background-color: $color-brown-dark;
+            color: #fff;
+        }
+
+        th, 
+        td {
+            width: (100% / 6);
+            max-width: fit-content;
+        }
+    }
+
+    .read-book {
+        background-color: $color-green-dark;
+    }
+    
+    .no-read-book {
+        background-color: $color-red;
+    }
 }
 
-table,
-th,
-td {
-    border: 1px solid;
-    border-collapse: collapse;
-}
-
-.read-book {
-    background-color: $color-green-dark;
-}
-
-.no-read-book {
-    background-color: $color-red;
-}
