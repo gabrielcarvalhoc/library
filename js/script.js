@@ -36,11 +36,15 @@ function displayBooks() {
         tbody.append(tr);
         
         for (let prop in book) {
-            if (book.hasOwnProperty(prop)) {
-                let td = document.createElement('td');
-                tr.append(td);
-                td.append(book[prop]);
-            }
+            let td = document.createElement('td');
+            tr.append(td);
+            td.append(book[prop]);
+        }
+
+        if (book.read == 'yes') {
+            tr.classList.add('read-book');
+        } else if (book.read == 'no') {
+            tr.classList.add('no-read-book');
         }
         
         let td1 = document.createElement('td');
