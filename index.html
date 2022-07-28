@@ -40,17 +40,26 @@
         </form>
 
         <table id="table" style="display: none;">
+            <colgroup>
+                <col style="width: calc(2 * (100% / 8))">
+                <col style="width: calc(2 * (100% / 8))">
+                <col style="width: calc(100% / 8)">
+                <col style="width: calc(100% / 8)">
+                <col style="width: calc(100% / 8)">
+                <col style="width: calc(100% / 8)">
+            </colgroup>
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Pages</th>
-                    <th>Read?</th>
-                    <th>Status</th>
-                    <th>Actions</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Pages</th>
+                    <th scope="col">Read?</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody id="books-table">
+                
             </tbody>
         </table>
     </main>

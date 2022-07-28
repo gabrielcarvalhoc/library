@@ -68,8 +68,6 @@ function displayBooks() {
         tr.append(td2);
         td2.append(deleteButton);
     })
-
-    deleteButtons = document.querySelectorAll('.delete-button');
 }
 
 buttonNewBook.addEventListener('click', () => {
