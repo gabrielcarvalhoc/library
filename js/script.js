@@ -1,5 +1,4 @@
 let tbody = document.querySelector('#books-table');
-let buttonNewBook = document.querySelector('#new-book-button');
 let formNewBook = document.querySelector('#form-new-book');
 let table = document.querySelector('#table');
 
@@ -69,11 +68,6 @@ function displayBooks() {
         td2.append(deleteButton);
     })
 }
-
-buttonNewBook.addEventListener('click', () => {
-    formNewBook.style.display = 'flex';
-    table.style.display = 'table';
-})
 
 formNewBook.addEventListener('submit', (e) => {
     e.preventDefault();

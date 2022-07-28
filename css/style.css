@@ -54,6 +54,7 @@ button {
   background-color: #5be4a2;
 }
 .container #form-new-book {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
