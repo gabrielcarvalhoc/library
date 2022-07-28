@@ -73,6 +73,13 @@ formNewBook.addEventListener('submit', (e) => {
     e.preventDefault();
     addBooktoLibrary();
     displayBooks();
+
+    Swal.fire({
+        title: 'Success!',
+        text: 'Your book has been added to the library.',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
 })
 
 function toggleRead(e) {

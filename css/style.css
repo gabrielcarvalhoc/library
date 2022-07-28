@@ -30,9 +30,7 @@ button {
   width: fit-content;
   font-weight: 600;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s ease;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -43,15 +41,6 @@ button {
   padding: 5vh 5vw;
   gap: 5vh;
   width: 100%;
-}
-.container #new-book-button {
-  font-size: 18px;
-  padding: 10px 25px;
-  background-color: #97d3b6;
-}
-.container #new-book-button:hover {
-  transform: scale(1.05);
-  background-color: #5be4a2;
 }
 .container #form-new-book {
   display: flex;
@@ -94,6 +83,8 @@ button {
   background-color: #bbc2ee;
   font-size: 16px;
   padding: 10px 25px;
+  border-radius: 6px;
+  transition: 0.2s ease;
 }
 .container #form-new-book #add-button:hover {
   background-color: #505370;

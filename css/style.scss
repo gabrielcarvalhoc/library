@@ -4,12 +4,11 @@
 $color-yellow-light: #F4F1DE;
 $color-purple-light: #bbc2ee;
 $color-purple-dark: #505370;
-$color-green-light: #5be4a2;
-$color-green-dark: #97d3b6;
 $color-brown-light: #cec9aa;
 $color-brown-dark: #b6ae78;
 $color-red-light: #ffb1b1;
 $color-red-dark: #ff5858;
+$color-green: #97d3b6;
 $color-orange: #ffd381;
 
 * {
@@ -42,9 +41,7 @@ button {
     width: fit-content;
     font-weight: 600;
     border: none;
-    border-radius: 6px;
     cursor: pointer;
-    transition: 0.2s ease;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -55,17 +52,6 @@ button {
     padding: 5vh 5vw;
     gap: 5vh;
     width: 100%;
-
-    #new-book-button {
-        font-size: 18px;
-        padding: 10px 25px;
-        background-color: $color-green-dark;
-    
-        &:hover {
-            transform: scale(1.05);
-            background-color: $color-green-light;
-        }
-    }
     
     #form-new-book {
         display: flex;
@@ -114,6 +100,8 @@ button {
             background-color: $color-purple-light;
             font-size: 16px;
             padding: 10px 25px;
+            border-radius: 6px;
+            transition: 0.2s ease;
         
             &:hover {
                 background-color: $color-purple-dark;
@@ -148,7 +136,7 @@ button {
         }
 
         .read-book {
-            background-color: $color-green-dark;
+            background-color: $color-green;
         }
         
         .no-read-book {
