@@ -134,9 +134,7 @@ button {
 @media screen and (max-width: 480px) {
   .form-inputs {
     flex-direction: column;
-  }
-  .form-inputs div:nth-child(4) label {
-    text-align: center;
+    align-items: flex-start;
   }
 }
 
