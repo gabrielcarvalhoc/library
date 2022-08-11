@@ -4,7 +4,7 @@ Seja bem vindo! Neste oitavo desafio do Treinamento "The Odin Project", desenvol
 
 Nela, é possível adicionar livros inserindo seu Nome, Autor, Número de Páginas e se já o leu ou não. Além disso, após adicionado, o usuário pode alterar se já leu ou não cada livro, além de poder removê-los da lista.
 
-Neste projeto, utilizei <i>Object Constructors</i> e todas as ações realizadas (adição de livro, alteração de status e remoção de livro) são refletidas em um array de objetos.
+Neste projeto, utilizei <i>Classes</i> para a organização do código e todas as ações realizadas (adição de livro, alteração de status e remoção de livro) são refletidas em um array de objetos.
 
 Você pode conferir o projeto em: [Library](https://gabrielcarvalhoc.github.io/library/)
 
