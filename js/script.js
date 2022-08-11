@@ -4,11 +4,13 @@ let table = document.querySelector('#table');
 
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 function addBooktoLibrary() {
@@ -79,7 +81,7 @@ formNewBook.addEventListener('submit', (e) => {
         text: 'Your book has been added to the library.',
         icon: 'success',
         confirmButtonText: 'Ok'
-      })
+    })
 })
 
 function toggleRead(e) {
